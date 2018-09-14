@@ -3,3 +3,48 @@ body {
 	color: #fff;
 	background-color: #FF736E;
 }
+input {
+	padding: 10px 10px 10px 0;
+	background-color: transparent;
+	border: none;
+	color: #fff;
+	position: relative;
+}
+input::-webkit-input-placeholder {
+	color: #fff;
+}
+input:hover, input:focus {
+	outline: 0;
+}
+.inp_wrapper {
+	display: inline-block;
+}
+.inp_part {
+	position: relative;
+}
+.inp_part::before {
+	content:'';
+	bottom: 0;
+	right: 0;
+	position: absolute;
+	transition: .3s all ease;
+	width: 50%;
+	height: 10px;
+	background-color: #fff;
+}
+.inp_part::after {
+	content:'';
+	top: 0;
+	left: 0;
+	position: absolute;
+	transition: .6s all ease;
+	width: 0;
+	height: 2px;
+	background-color: #fff;
+}
+input:focus ~ *::before {
+	height: 0;
+}
+input:focus ~ *::after {
+	width: 100%;
+}
